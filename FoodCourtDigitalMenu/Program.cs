@@ -14,7 +14,5 @@ public class Program
     {
         return WebHost.CreateDefaultBuilder(args)
             .UseStartup<Startup>();
-
-
     }
 }
