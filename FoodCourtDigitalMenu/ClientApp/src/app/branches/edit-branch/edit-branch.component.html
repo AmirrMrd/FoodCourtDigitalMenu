@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="firstDiv">
+      <div class="branchLogo">
+          <div class="branchimg">
+          <img [src]="ImgUrl" alt="">
+          </div>
+      </div>
+      <form [formGroup]="editBranchForm" (ngSubmit)="submitBranch(this.editBranchForm)">
+        <div class="formDiv">
+          <span>نام شعبه</span>
+              <input type="text" class="branchName" formControlName="branchName" minlength="3" required />
+          <span>کد شعبه</span>
+              <input type="number" class="branchName" formControlName="branchId" required />
+          <span>توضیحات</span>
+              <input type="text" class="branchDescription" formControlName="branchDescription" required />
+          <div class="branchDetailDiv">
+            <div class="port">
+              <span>Port</span>
+              <input type="number" formControlName="branchPort" required/>
+            </div>
+            <div class="ipaddress">
+              <span>Ip Address</span>
+              <input type="text" formControlName="branchIpAddress" required />
+            </div>
+          </div>
+          <span>لوگو</span>
+              <input type="file" class="logo" formControlName="branchLogoUrl" (change)="getUrl($event)" required />
+          <div class="status">
+          <span>فعال</span>
+              <input type="checkbox" class="active" name="" id="" formControlName="branchIsActive" required />
+          </div>
+        </div>
+        <div class="formBtn">
+          <button type="submit" [disabled]="!editBranchForm.valid">ثبت</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

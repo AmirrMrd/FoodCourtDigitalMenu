@@ -1,0 +1,26 @@
+<div>
+    <header class="bg-body-tertiary">
+      <div class="main">
+        <div class="logo" style="height: 62px;"><img style="height: 100%;" src="../../assets/background/bg-img.png" alt=""></div>
+        <div style="display: flex;">
+          <button class="menu-toggle btn btn-info" (click)="toggleMenu()">
+            <i class="fas fa-bars"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></i>
+          </button>
+        </div>
+      </div>
+      <div class="nav-div">
+        <nav class="navbar">
+          <ul class="nav-links list-group" [class.open]="isMenuOpen">
+            <li class="list-group-item list-group-item-info d-flex justify-content-center"><a [routerLink]="['manageAccount']">مدیریت کاربران</a></li>
+            <li class="list-group-item list-group-item-info d-flex justify-content-center"><a [routerLink]="['manageBranches']">مدیریت شعب</a></li>
+            <li class="list-group-item list-group-item-info d-flex justify-content-center"><a href="#">تنظیمات</a></li>
+            <li class="list-group-item list-group-item-info d-flex justify-content-center"><a href="#">صفحه اصلی</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main style="margin-top: 10px ;">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  

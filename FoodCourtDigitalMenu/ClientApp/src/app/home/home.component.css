@@ -1,0 +1,187 @@
+/* .section-cards {
+    display: flex;
+    justify-content: center;
+    right: 0;
+    width: 100%;
+    margin-top: 2rem;
+} */
+
+/* .card-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2%;
+
+
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5% green ;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 4px 5px 0 grey;
+}
+
+.card-header {
+    width: 100%;
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.branchName {
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+    font-size: 18px;
+}
+
+.branchDescription {
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.portNumber {
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.card-footer {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card-btn {
+    width: 50%;
+    background-color: #fd3512;
+    border: none;
+    border-radius: 25px;
+    padding: 4%;
+    font-size: large;
+} */
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* body {
+  background-color: #303032;
+} */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-gap: 40px;
+  padding: 60px 0;
+}
+
+.text--medium {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ecf0f1;
+}
+
+.cards {
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 60px));
+  grid-gap: 40px;
+}
+
+.card {
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: #39393b;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card__image-container {
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__image-container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card__content {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.card__title {
+  margin-bottom: 20px;
+}
+
+.card__info {
+  display: flex;
+  align-self: end;
+  align-items: center;
+}
+
+.card__price {
+  margin-right: auto;
+  padding: 5px 20px;
+  background-color: #303032;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    grid-column-end: span 6;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 12;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 10px repeat(6, 1fr) 10px;
+    grid-gap: 10px;
+  }
+  .cards {
+    grid-column: 2 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+  .card {
+    grid-column-end: span 6;
+  }
+}

@@ -1,0 +1,188 @@
+.main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    /* align-items: center;
+    background-image: url(../../.../../../assets/background/bg-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  
+  .firstDiv {
+    display: block;
+    background-color: rgba(187, 248, 240, 0.61);
+    width: 40%;
+    border-radius: 2%;
+  }
+  
+  .formDiv {
+    display: block;
+    width: 50%;
+  }
+  
+  form {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  input {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 9px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    outline: none;
+  }
+  
+  .formBtn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5%;
+  }
+  
+  button {
+    width: 20%;
+    align-items: center;
+    background-color: #0a66c2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto,
+      "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+      "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+      box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+      color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+  }
+  
+  .branchDetailDiv { 
+      display: flex;
+      justify-content: center;
+      
+  }
+  
+  .ipaddress {
+      width: 70%;
+      text-align: end;
+      padding-right: 2rem;
+  }
+  
+  .port {
+      width: 30%;
+      text-align: end;
+  }
+  
+  .logo {
+      background-color: rgb(247, 247, 247);
+      margin-top: 10px;
+  }
+  
+    input[type=file]::file-selector-button {
+      border: none;
+      background: #1d61f5;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+    }
+    
+
+    /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+    input[type=file]::file-selector-button:hover {
+      background: #88b0f5;
+    }
+
+  
+    .status {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .active {
+      height: 15px !important;
+      width: 15%;
+      margin-top: 0.4rem;
+      box-shadow: none !important;
+    }
+  
+    .branchLogo {
+      display: flex;
+      justify-content: center;
+      /* height: 30%; */
+    }
+  
+    .branchimg { 
+      display: flex;
+      width: 50%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  
+  
+  
+  
+    /* Media*/
+  
+    /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .example {background: red;}
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .example {background: green;}
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .example {background: blue;}
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .example {background: orange;}
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .example {background: pink;}
+  }

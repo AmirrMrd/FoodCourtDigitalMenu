@@ -1,0 +1,20 @@
+<div class="container h-100 d-flex justify-content-center align-items-center">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(this.loginForm)">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <label for="input-userName" class="form-label">نام کاربری</label>
+                    <input type="text" class="form-control line-height-btn-xsm" id="input-userName " aria-describedby="emailHelp" formControlName="userName">                
+                  </div>
+                  <div class="col-12 mb-2">
+                    <label for="input-password" class="form-label">رمز عبور</label>
+                    <input type="password" class="form-control line-height-btn-xsm" id="input-password" formControlName="password">
+                  </div>
+            </div>              
+            <div class="w-100 d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary w-50 mt-3 line-height-btn-xsm">ورود</button>   
+            </div>                
+        </form>
+</div>
+
+
+

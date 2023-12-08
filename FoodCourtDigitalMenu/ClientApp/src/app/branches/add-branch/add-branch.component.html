@@ -1,0 +1,118 @@
+
+<div class="container d-flex justify-content-center align-items-center">
+    <form [formGroup]="addBranchForm" (ngSubmit)="submitBranch()">
+      <div class="row mb-3">
+        <div class="col d-flex justify-content-center">
+          <img *ngIf="ImgUrl == ''" src="../../../assets/background/SepidzLogo.jpg" alt="">
+          <img [src]="ImgUrl" alt="">
+        </div>
+        </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="BranchId" class="form-label">کد شعبه</label>
+          <input type="text" formControlName="branchId" class="form-control line-height-btn-xsm" id="BranchId">
+          <div style="color: red;" *ngIf="submitted && f['branchId'].invalid">کد شعبه یه درستی پر نشده است</div>
+        </div>
+        <div class="col-md-6">
+          <label for="BranchName" class="form-label">نام شعبه</label>
+          <input type="text" formControlName="branchName" class="form-control line-height-btn-xsm" id="BranchName">
+          <div class="invalid-feedback">
+            Looks good!
+          </div>
+          <div style="color: red;" *ngIf="submitted && f['branchName'].invalid">نام شعبه اجباری است</div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 mb-3">
+          <label for="DranchDescription" class="form-label">توضیحات</label>
+          <input type="text" formControlName="branchDescription" class="form-control line-height-btn-xsm" id="DranchDescription" placeholder="">
+        </div>
+        <div class="col-12">
+          <label for="Branchlogo" class="form-label">لوگو</label>
+          <input type="file" id="Branchlogo" formControlName="branchLogoUrl" (change)="upload($event.target)" placeholder="فایل" class="form-control line-height-btn-xsm" (change)="upload($event.target)" />
+          <div style="color: red;" *ngIf="submitted && f['branchLogoUrl'].invalid">انتخاب لوگو اجباری است</div>
+        </div>
+      </div>
+      <div class="row mb-3" id="input-network">
+        <div class="col-8">
+          <label for="IpAddress" class="form-label">IpAddress</label>
+          <input type="text" formControlName="branchIpAddress" class="form-control line-height-btn-xsm" id="IpAddress" required>
+          <div style="color: red;" *ngIf="f['branchIpAddress'].invalid && f['branchIpAddress'].dirty">آدرس سرور به درستی وارد نشده است</div>
+        </div>
+        <div class="col-4">
+          <label for="Port" class="form-label">Port</label>
+          <input type="text" formControlName="BranchPortNumber" class="form-control line-height-btn-xsm" id="Port">
+          <div style="color: red;" *ngIf="f['BranchPortNumber'].invalid && f['BranchPortNumber'].dirty">شماره پورت اشتباه میباشد</div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" formControlName="branchIsActive" type="checkbox" id="IsActive">
+            <label class="form-check-label" for="IsActive">
+              شعبه فعال میباشد
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-center mt-5">
+        <button type="submit" [disabled]="addBranchForm.invalid" class="btn btn-success line-height-btn-xsm w-50">ثبت اطلاعات</button>
+      </div>
+    </form>
+  </div>
+
+<!-- <div class="main">
+    <div class="firstDiv">
+      <form [formGroup]="addBranchForm" (ngSubmit)="submitBranch()">
+        <div class="input-item-logo">
+            <div class="branchLogo">
+              <div class="branchimg">
+              <img *ngIf="ImgUrl == ''" src="../../../assets/background/Square_200x200.png" alt="">
+              <img [src]="ImgUrl" alt="">
+              </div>
+            </div>
+          </div>
+        <div class="input-group">
+          <div class="input-item">
+            <span>نام شعبه</span>
+            <input type="text" class="branchName" formControlName="branchName" />
+            <div *ngIf="submitted && f['branchName'].invalid">اسم شعبه اجباری است</div>
+          </div>
+          <div class="input-item">
+            <span>کد شعبه</span>
+              <input type="number" class="branchName" formControlName="branchId"  />
+          </div>
+          <div class="input-item">
+            <span>توضیحات</span>
+              <input type="text" class="branchDescription" formControlName="branchDescription"  />
+          </div>
+          <div class="input-item">
+            <div class="input-network">
+              <div class="port">
+                <span>Port</span>
+                <input id="port-input" type="number" formControlName="branchPort" />
+              </div>
+              <div class="ipaddress">
+                <span>Ip Address</span>
+                <input id="ip-input" type="text" formControlName="branchIpAddress"  />
+              </div>
+            </div>
+            </div>
+          <div class="input-item">
+            <span>لوگو</span>
+            <input type="file" class="logo" formControlName="ImageBase64" (change)="upload($event.target)" required />
+          </div>
+          <div class="input-item">
+            <div class="status">
+              <span>فعال</span>
+                  <input type="checkbox" class="active" name="" id="" formControlName="branchIsActive"  />
+              </div>
+          </div>
+          <div class="input-btn">
+            <button type="submit">ثبت</button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+   -->

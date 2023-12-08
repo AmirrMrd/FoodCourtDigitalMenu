@@ -1,0 +1,29 @@
+<div id="main" class="container h-100 d-flex justify-content-center align-items-center">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(this.registerForm)">
+        <div class="row">
+            <div class="col-12 mb-2">
+                <label for="input-userName" class="form-label">نام کاربری</label>
+                <input type="text" class="form-control line-height-btn-xsm" id="input-userName " formControlName="userName">                
+              </div>
+              <div class="col-12 mb-2">
+                <label for="input-password" class="form-label">گذرواژه</label>
+                <input type="password" class="form-control line-height-btn-xsm" id="input-password" formControlName="password" required>
+                <div style="color: red;" *ngIf="f['password'].value === '' ">گذرواژه اجباری میباشد</div>
+            </div>
+              <div class="col-12 mb-2">
+                <label for="input-confirmPassword" class="form-label">تکرار گذرواژه</label>
+                <input type="password" class="form-control line-height-btn-xsm" formControlName="confirmPassword" id="input-confirmPassword" required>
+                <div style="color: red;" *ngIf="f['confirmPassword'].value !== f['password'].value">گذرواژه و تکرار آن باهم مطابقت ندارد</div>
+                <div style="color: red;" *ngIf="f['confirmPassword'].dirty && f['confirmPassword'].value === '' ">تکرار گذرواژه نباید خالی باشد</div>
+            </div>
+              <div class="col-12 mb-2">
+                <label for="input-mobile" class="form-label">موبایل</label>
+                <input type="text" class="form-control line-height-btn-xsm" id="input-mobile" formControlName="mobile" required>
+                <div style="color: red;" *ngIf="f['mobile'].value === '' ">موبایل وارد نشده</div>
+              </div>
+        </div>              
+        <div class="w-100 d-flex justify-content-center">
+          <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary w-50 mt-3 line-height-btn-xsm">ورود</button>   
+        </div>                
+    </form>
+</div>

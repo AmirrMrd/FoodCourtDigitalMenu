@@ -1,0 +1,20 @@
+<main>
+  <section class="cards">
+    <div class="card" *ngFor="let item of branchItem">
+      <div class="card__image-container">
+        <img
+          src="../assets/background/bg-img.png"
+        />
+      </div>
+      <div class="card__content">
+        <p class="card__title text--medium">
+          {{ item.name}}
+        </p>
+        <div class="card__info">
+          <p class="text--medium">{{ item.family }}</p>
+          <p class="card__price text--medium">سفارش</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

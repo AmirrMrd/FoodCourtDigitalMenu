@@ -1,0 +1,19 @@
+@import url('./assets/bootstrap/bootstrap.rtl.min.css');
+@font-face {
+    font-family: mainFont !important;
+    src: url(./assets/font/Yekan.ttf) !important;
+  }
+  
+html {
+    height: 100%;
+
+}
+
+body {
+    margin: 0%;
+    font-family: mainFont !important;
+    height: 100%;
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+
+}
