@@ -1,4 +1,158 @@
+<section class="volunteer-section section-padding" id="section_4" style="direction: rtl;">
+  <div class="container">
+    <div class="row" style="justify-content: center;">
+      <div class="col-lg-6 col-12">
+        
+        <form
+          class="custom-form volunteer-form mb-5 mb-lg-0"
+          action="#"
+          method="post"
+          role="form"
+          [formGroup]="addBranchForm" (ngSubmit)="submitBranch()"
+        >
+        <div class="row mb-3">
+          <div class="col d-flex justify-content-center">
+            <img *ngIf="ImgUrl == ''" src="../../../assets/background/SepidzLogo.jpg" alt="">
+            <img [src]="ImgUrl" alt="">
+          </div>
+          </div>
+          <h3 class="mb-4">ایجاد شعبه</h3>
 
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <input
+                type="text"
+                name="branchId"
+                id="branchId"
+                class="form-control"
+                placeholder="کد شعبه"
+                required
+                formControlName="branchId"
+              />
+
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <input
+                type="branchName"
+                name="branchName"
+                id="branchName"
+                class="form-control"
+                placeholder="نام شعبه"
+                required
+                formControlName="branchName"
+              />
+            </div>
+            <div class="col-lg-6 col-12">
+              <input
+                type="text"
+                name="BranchPortNumber"
+                id="BranchPortNumber"
+                class="form-control"
+                placeholder="آدرس پورت شعبه"
+                required
+                formControlName="BranchPortNumber"
+              />
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <input
+                type="text"
+                name="branchIpAddress"
+                id="branchIpAddress"
+                class="form-control"
+                placeholder="آدرس سرور شعبه"
+                required
+                formControlName="branchIpAddress"
+              />
+            </div>
+
+            <div class="col-lg-12 col-12">
+              <div class="input-group input-group-file">
+                <input
+                type="file" id="Branchlogo" 
+                formControlName="branchLogoUrl" 
+                (change)="upload($event.target)"
+                  class="form-control"
+                  id="inputGroupFile02"
+                />
+
+                <label class="input-group-text" for="inputGroupFile02"
+                  >لوگو</label
+                >
+
+                <i class="bi-cloud-arrow-up ms-auto" style="margin-right:10px;"></i>
+              </div>
+            </div>
+          </div>
+
+          <textarea
+            name="branchDescription"
+            rows="3"
+            class="form-control"
+            id="branchDescription"
+            placeholder="توضیحات"
+            formControlName="branchDescription"
+          ></textarea>
+          <div style="color: red;" *ngIf="submitted && f['branchId'].invalid">کد شعبه یه درستی پر نشده است</div>
+          <div style="color: red;" *ngIf="submitted && f['branchLogoUrl'].invalid">انتخاب لوگو اجباری است</div>
+          <div style="color: red;" *ngIf="f['branchIpAddress'].invalid && f['branchIpAddress'].dirty">آدرس سرور به درستی وارد نشده است</div>
+          <div style="color: red;" *ngIf="f['BranchPortNumber'].invalid && f['BranchPortNumber'].dirty"></div>
+          <div style="color: red;" *ngIf="submitted && f['branchName'].invalid">نام شعبه اجباری است</div>
+          <button type="submit" class="form-control">ذخیره</button>
+        </form>
+      </div>
+
+      <div class="col-lg-4 col-9">
+      
+        <div class="col-lg-12 col-12">
+          <h5 class="mt-5 mb-3">جستجو کنید</h5>
+
+          <form
+            class="custom-form search-form"
+            action="#"
+            method="get"
+            role="form"
+          >
+            <input
+              name="search"
+              type="search"
+              class="form-control"
+              id="search"
+              placeholder="جستجو کنید ..."
+              aria-label="Search"
+            />
+
+          </form>
+
+
+              <div class="news-block news-block-two-col d-flex mt-4" *ngFor="let item of branchItem">
+              
+    
+                <div class="news-block-two-col-info" style="display: flex; justify-content:space-around; width: 60%; background-color: #f0f8ff;">
+                  <div class="news-block-title mb-2">
+                    <h6>
+                      <a style="color: rgb(113, 183, 243) !important;" class="news-block-title-link"
+                        >{{ item.BranchName }}</a
+                      >
+                    </h6>
+                  </div>
+                  <div class="news-block-date">
+                    <p style="color: rgb(113, 183, 243) !important;">
+                       ویرایش
+                    </p>
+              </div>
+          </div>
+          
+          </div>
+          </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 
 <div class="container d-flex justify-content-center align-items-center">
     <form [formGroup]="addBranchForm" (ngSubmit)="submitBranch()">
       <div class="row mb-3">
@@ -59,7 +213,7 @@
         <button type="submit" [disabled]="addBranchForm.invalid" class="btn btn-success line-height-btn-xsm w-50">ثبت اطلاعات</button>
       </div>
     </form>
-  </div>
+  </div> -->
 
 <!-- <div class="main">
     <div class="firstDiv">

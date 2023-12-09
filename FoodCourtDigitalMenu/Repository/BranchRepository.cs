@@ -84,7 +84,7 @@ namespace FoodCourtDigitalMenu.Repository
                     item.BranchDescription = model.BranchDescription;
                     item.BranchIpAddress = model.BranchIpAddress;
                     item.BranchPortNumber = model.BranchPortNumber;
-                    item.IsActive = model.IsActive;
+                    item.BranchIsActive = model.BranchIsActive;
                 }
                var resualt = service.WriteData(branch);
                 if (resualt != null)

@@ -20,7 +20,7 @@ export class AccountService {
   public login (user : string , password : string) {
     if (user === 's' && password === '1') {
       this.loggedIn = true;
-      this.router.navigate(['admin']);
+      this.router.navigate(['dashboard/add-branch']);
       return this.loggedIn;
     }
     else {

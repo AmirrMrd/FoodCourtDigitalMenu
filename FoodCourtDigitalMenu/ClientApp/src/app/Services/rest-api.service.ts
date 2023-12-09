@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
 };
+// const headers = {
+//     headers: new HttpHeaders({ 'Content-Type': 'application/octet-stream;' })
+// }
 @Injectable({
     providedIn: 'root'
 })
@@ -83,4 +86,17 @@ export class RestApiService<T> {
         const url = `${this.apiUrl}${CntUrl}/${id}`;
         return this.http.delete<T>(url, httpOptions);
     }
+    upload<T>(data:any, CntUrl: string): Observable<any> {
+        const headers = new HttpHeaders().set("Content-Type", "multipart/form-data");
+        const options = { headers: headers};
+        const fullUrl = `${this.apiUrl}/${CntUrl}`;
+        return this.http.post<T>(fullUrl, data , options);
+    }
+      
+    getImage<T>(CntUrl: string): Observable<T> {
+        const headers = new HttpHeaders().set("Accept", "image/png");
+        const options = { headers: headers, responseType: "blob" as "json" };
+        const url = `${this.apiUrl}${CntUrl}`;
+        return this.http.get<T>(url, options);
+      }
 }

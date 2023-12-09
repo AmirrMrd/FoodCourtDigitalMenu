@@ -16,6 +16,7 @@ import { RegisterComponent } from './account/register/register.component';
 import { ManageBranchesComponent } from './branches/manage-branches/manage-branches.component';
 import { ManageAccountsComponent } from './account/manage-accounts/manage-accounts.component';
 import { RestApiService } from './Services/rest-api.service';
+import { LoginComponent } from './account/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RestApiService } from './Services/rest-api.service';
     AddBranchComponent,
     ManageBranchesComponent,
     ManageAccountsComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,12 +42,14 @@ import { RestApiService } from './Services/rest-api.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path : 'admin' , component : AdminComponent,children : [
-        {path : 'manageAccount' , component : ManageAccountsComponent},
+      { path : 'admin' , component : LoginComponent},
+      { path : 'dashboard' , component : AdminComponent , children : [
         {path : 'manageBranches' , component : ManageBranchesComponent},
-        {path : 'register' , component : RegisterComponent},
-        {path : 'add-branch' , component : AddBranchComponent}
+        {path : 'add-branch' , component : AddBranchComponent},
+        {path : 'manageAccount' , component : ManageAccountsComponent}
       ]},
+      {path : 'register' , component : RegisterComponent}
+      
 
     ])
   ],

@@ -31,7 +31,7 @@ namespace FoodCourtDigitalMenu.Services
 
         public async Task<CrudResult> WriteData(List<BranchModel> list)
         {
-            var filename = $"{"amir"}.txt";
+            var filename = $"{"branch"}.txt";
             filename = @"Logs\" + filename;
             string dirPath = Directory.GetCurrentDirectory();
             if (!Directory.Exists(dirPath))
@@ -60,7 +60,7 @@ namespace FoodCourtDigitalMenu.Services
         }
         public async Task<List<BranchModel>> ReadData()
         {
-            var filename = $"{"amir"}.txt";
+            var filename = $"{"branch"}.txt";
             filename = @"Logs\" + filename;
             string dirPath = Directory.GetCurrentDirectory();
             if (!Directory.Exists(dirPath))
@@ -80,6 +80,7 @@ namespace FoodCourtDigitalMenu.Services
             }
             return null;
         }
+
 
     }
 }

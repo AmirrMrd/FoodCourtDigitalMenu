@@ -57,6 +57,53 @@ namespace FoodCourtDigitalMenu.Controllers
 
         }
 
+        //[AllowAnonymous]
+        //[HttpPost]
+        //[Route("SaveBranchLogo")]
+        //public async Task<IActionResult> SaveBranchLogo(IFormFile Data, string? FileName, string? UserId)
+        //{
+        //    try
+        //    {
+        //        // Check if a photo was uploaded
+        //        if (Data.FileName == null || Data.Length == 0)
+        //        {
+        //            return BadRequest("No photo uploaded.");
+        //        }
+
+        //        // Create the full path to the destination folder based on the user ID
+        //        string FolderPath = Path.Combine("assets", "userAvatar", UserId);
+
+        //        // Create the destination folder if it doesn't exist
+        //        if (!Directory.Exists(FolderPath))
+        //        {
+        //            Directory.CreateDirectory(FolderPath);
+        //        }
+        //        else
+        //        {
+        //            // Delete all files in the folder
+        //            DirectoryInfo directoryInfo = new DirectoryInfo(FolderPath);
+        //            foreach (FileInfo file in directoryInfo.GetFiles())
+        //            {
+        //                file.Delete();
+        //            }
+        //        }
+
+        //        // Combine the folder path and filename to create the full destination path
+        //        string DestinationPath = Path.Combine(FolderPath, FileName);
+
+        //        // Save the new file to the destination path
+        //        using (var stream = new FileStream(DestinationPath, FileMode.Create))
+        //        {
+        //            await Data.CopyToAsync(stream);
+        //        }
+
+        //        return Ok(true);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"An error occurred while saving the photo: {ex.Message}");
+        //    }
+        //}
         // PUT: api/Branch/5
         //public async Task<BranchModel> Put(int id, [FromBody] string value)
         //{

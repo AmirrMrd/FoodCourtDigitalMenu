@@ -1,4 +1,4 @@
-#input-network {
+/* #input-network {
   direction: ltr;
 }
 label {
@@ -11,11 +11,11 @@ form {
   backdrop-filter: blur(40px);
   border-radius: 16px;
 }
-
+*/
 img {
   max-width: 300px;
   max-height: 200px;
-}
+} 
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 200px) { 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { branch } from '../Models/BranchModel';
 import { RestApiService } from '../Services/rest-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent {
   
   branchItem : branch[] = [] ;
 
-  constructor (private http : RestApiService<any>) {  }
+  constructor (private http : RestApiService<any>, private router : Router) {  }
   ngOnInit(): void {
     this.getAllBranches();
   }
@@ -22,8 +23,13 @@ export class HomeComponent {
   // ]
 
   public getAllBranches() {
-   this.http.getEntity('GetAllBranches').subscribe((data:[]) => {
+   this.http.getEntity('GetAllBranches').subscribe((data:branch[]) => {
     this.branchItem = data;
    })
   }
+  openMenuDigital(ip: string,port:string) {
+   const url = `https://${ip}:${port}`;
+   location.href = url;
+  }
+ 
 }

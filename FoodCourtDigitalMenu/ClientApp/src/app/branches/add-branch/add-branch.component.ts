@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder } from '@angular/forms';
 import { branch } from 'src/app/Models/BranchModel';
 import { BranchService } from 'src/app/Services/branch.service';
@@ -10,7 +10,10 @@ import { RestApiService } from 'src/app/Services/rest-api.service';
   styleUrls: ['./add-branch.component.css']
 })
 
-export class AddBranchComponent {
+export class AddBranchComponent implements OnInit {
+  branchItem : branch[] = [];
+  userAvatar: string = '';
+
   // addBranchForm :  FormGroup = new FormGroup({}); 
   addBranchForm: FormGroup = new FormGroup({
     branchId: new FormControl(),
@@ -25,7 +28,7 @@ export class AddBranchComponent {
   public submitted = false;
 
 
-  constructor(private branchSer: BranchService, private formBuilder: FormBuilder , private res : RestApiService<branch>) {
+  constructor(private http: RestApiService<any>, private formBuilder: FormBuilder , private res : RestApiService<branch>) {
     this.addBranchForm = this.formBuilder.group({
       branchId: ['', Validators.required],
       branchName: ['', [Validators.required, Validators.minLength(3)]],
@@ -35,6 +38,9 @@ export class AddBranchComponent {
       branchIsActive: [true, Validators.requiredTrue],
       branchLogoUrl: ['', Validators.required]
     });
+  }
+  ngOnInit(): void {
+    this.getAllBranches();
   }
 
 
@@ -86,7 +92,58 @@ export class AddBranchComponent {
       this.ImgUrl = '';
     }
   }
+  getFileExtension(filename : string) {
+    return "." + filename.split(".").pop();
+  }
+  // getUserAvatar() {
+  //   this.http.getImage("SaveBranchLogo").subscribe({
+  //     next: (response: any) => {
+  //       if (response != null) {
+  //         const reader = new FileReader();
+  //         let base64Image;
+  //         reader.onload = (e: any) => {
+  //           base64Image = e.target.result;
+  //           this.userAvatar = base64Image;
+  //         };
+  //         reader.readAsDataURL(response);
+  //       }
+  //     },
+  //   });
+  // }
 
+  // setProfilePicture(fileToUpload : any) {
+  //   if (fileToUpload.target.files && fileToUpload.target.files[0]) {
+  //     const oldName = this.getFileExtension(fileToUpload.target.files[0].name);
+  //     const FileName = "avatar" + oldName;
+  //     const formData = new FormData();
+  //     let barArray = [{item: 'one'}, {item: 'two'}];
+      
+  //     formData.append("data", JSON.stringify(barArray));
+  //     formData.append("FileName", FileName);
+  //     const reader = new FileReader();
+  //     reader.onload = (e: any) => {
+  //       let image = new Image();
+  //       image.src = e.target.result;
+  //       console.log(e.target);
+  //       image.onload = (rs: any): any => {
+  //         const img_height = rs.currentTarget["height"];
+  //         const img_width = rs.currentTarget["width"];
+  //           this.http.upload( formData,"SaveBranchLogo").subscribe({
+  //             next: (response) => {
+  //               if (response) this.getUserAvatar();
+  //             },
+  //           });
+  //       };
+  //     };
+  //     reader.readAsDataURL(fileToUpload.target.files[0]);
+  //   }
+  //   return "";
+  // }
+  public getAllBranches() {
+    this.http.getEntity('GetAllBranches').subscribe((data:[]) => {
+     this.branchItem = data;
+    })
+   }
 
 }
 

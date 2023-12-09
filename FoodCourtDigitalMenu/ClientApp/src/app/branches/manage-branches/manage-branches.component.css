@@ -1,12 +1,13 @@
+
 .sectionOne {
     font-weight: bold;
-    background-color: rgba(149, 149, 184, 0.516);
+    background-color: rgba(149, 149, 184, 0.516); 
     height: 100px;
 }
 
 .sectionTwo {
     font-weight: bold;
-    background-color: rgba(180, 149, 208, 0.422);
+    background-color: rgba(180, 149, 208, 0.422); 
     height: 100px;
 }
 
